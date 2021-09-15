@@ -30,6 +30,9 @@ print ("==============================================\n")
 
 for port in range (1, 65535):
     mysocket = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+    
+    socket.setdefaulttimeout(0.5)
+    
     if (mysocket.connect_ex ((ip1,port)) == 0):
         open_ports.append(port)
         site = requests.get("http://"+host)
@@ -41,6 +44,9 @@ print ("==============================================\n")
 
 for x in open_ports:
     mynewsocket = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+
+    socket.setdefaulttimeout(0.5)
+
     mynewsocket.connect((ip1,x))
     banner = mynewsocket.recv(1024)
     mynewsocket.close()
