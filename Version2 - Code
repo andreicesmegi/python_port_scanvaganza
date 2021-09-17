@@ -3,7 +3,7 @@ import sys
 import socket
 import information
 import requests
-import os
+from requests_html import HTMLSession
 
 print ("\n\n\n=============****   PYTHON PORT SCANVAGANZA  ****=============")
 print ("=============****           VERSION 2        ****=============")
@@ -61,29 +61,20 @@ def banner():
                 pass
         except socket.timeout:
                 pass
-
 banner()
 
 def parsing():
-
     if (80 in open_ports):
-        theothersock = socket.socket (socket.AF_INET, socket.SOCK_STREAM)
+        print ("\n=============************************************=============")
+        print ("           *************** SUBDOMAINS **************          ")
+        print ("=============************************************=============\n")
 
-        site = requests.get("http://"+host)
-        content = site.content
-        print (content)
+        session = HTMLSession()
+        site = session.get("http://"+host)
+        parse_r = site.html.links
+        for line in parse_r:
 
-'''            theothersock.close()
-            if (x >50):
-                print (" ")
-            else:
-                print ("\n>> For Port number ",x,"The banner is: ",banner,"<---")
-        except NameError:
-                pass
-        except socket.timeout:
-                pass
-'''
-
+            print (line)
 parsing()
 
 
