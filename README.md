@@ -1,5 +1,5 @@
 # python_port_scanvaganza
-Port Scanner, IP detecter and Banner Grabber
+Port Scanner, IP detecter, Banner Grabber and Subdomain scanner.
 
 THIS IS MY FIRST EXPERIENCE CODING SOMETHING USEFULL IN PYTHON.
 I INTEND TO USE THIS CODE FOR CYBERSECURITY STUDYING ONLY.
