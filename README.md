@@ -1,7 +1,7 @@
 # python_port_scanvaganza
 
-Please, use VERSION 2.
-Por favor, use a VERSION 2 para enviar seus commits.
+Please, use VERSION 3.
+Por favor, use a VERSION 3 para enviar seus commits.
 
 Port Scanner, IP detecter, Banner Grabber and Subdomain scanner.
 
